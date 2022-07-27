@@ -1,4 +1,17 @@
 # Databricks notebook source
+# MAGIC %md
+# MAGIC 
+# MAGIC # Simplify data conversion from Spark to TensorFlow
+# MAGIC 
+# MAGIC This notebook demonstrates the following workflow on Databricks:
+# MAGIC 1. Load data using Spark.
+# MAGIC 2. Convert the Spark DataFrame to a TensorFlow Dataset suing petastorm 'spark_dataset_converter'.
+# MAGIC 3. Feed the data into a single-node TensorFlow model for training.
+# MAGIC 4. Feed the data into a distributed hyperparameter tuning function.
+# MAGIC 5. Feed the data into a distributed TensorFlow model for training.
+
+# COMMAND ----------
+
 from pyspark.sql.functions import col
 
 from petastorm.spark import SparkDatasetConverter, make_spark_converter
